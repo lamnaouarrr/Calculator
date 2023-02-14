@@ -1,0 +1,62 @@
+.keyboard{
+    display: flex;
+}
+
+.rightSide{
+    display: flex;
+    flex-direction: column;
+}
+.grpMM{
+    display: flex;
+}
+.grp96A{
+    display: flex;
+}
+.line96{
+    display: flex;
+    flex-direction: column;
+}
+.grp3PE{
+    display: flex;
+}
+.line3P{
+    display: flex;
+    flex-direction: column;
+}
+
+.leftSide{
+    display: flex;
+    flex-direction: column;
+}
+.grpD741D852{
+    display: flex;
+}
+.lineD741{
+    display: flex;
+    flex-direction: column;
+}
+.lineD852{
+    display: flex;
+    flex-direction: column;
+}
+
+.zero{
+    width: 200px;
+}
+
+.equal{
+    height: 200px;
+}
+
+.aDD{
+    height: 200px;
+}
+
+.reset{
+    width: 400px;
+}
+
+button{
+    height: 100px;
+    width: 100px;
+}
