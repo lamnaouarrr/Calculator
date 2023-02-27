@@ -1,41 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.display{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    width: 400px;
+    height: 200px;
+}
+
+.firstLine, .secondLine{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 400px;
+}
+
+.secondLine{
+    margin-left: 100px;
+}
+
 .keyboard{
     display: flex;
+    border: 3px solid black;
 }
 
 .rightSide{
     display: flex;
     flex-direction: column;
 }
-.grpMM{
+.grpMM, .grp96A, .grp3PE, .grpD741D852{
     display: flex;
-}
-.grp96A{
-    display: flex;
-}
-.line96{
-    display: flex;
-    flex-direction: column;
-}
-.grp3PE{
-    display: flex;
-}
-.line3P{
-    display: flex;
-    flex-direction: column;
 }
 
-.leftSide{
-    display: flex;
-    flex-direction: column;
-}
-.grpD741D852{
-    display: flex;
-}
-.lineD741{
-    display: flex;
-    flex-direction: column;
-}
-.lineD852{
+.line96, .line3P, .leftSide, .lineD741, .lineD852{
     display: flex;
     flex-direction: column;
 }
@@ -44,15 +52,15 @@
     width: 200px;
 }
 
-.equal{
+.equal, .aDD{
     height: 200px;
 }
 
-.aDD{
-    height: 200px;
+.bot{
+    border: 3px solid black;
 }
 
-.reset{
+.resetCalculator{
     width: 400px;
 }
 
