@@ -3,36 +3,163 @@ body{
     padding: 0;
 }
 
+:root {
+    --primary-color: #32b5d9;
+    --secondary-color: #333333;
+}
+
+.equal:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.number:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.deleteValue:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.operator:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.resetCalculator:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-top: 5px solid #030F25;
+}
+
+.blueBack{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(40%);
+}
+
+.atitle{
+    font-size: 50px;
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #32b5d9;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    gap: 800px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.odin{
+    width: 350px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.ayb{
+    width: 100px;
+    height: auto;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+}
+
+img:hover {
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .calculator{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin: 0px 100px;
+    width: 400px;
+    border: 5px solid #071330;
+    border-radius: 30px;
 }
 
 .display{
     display: flex;
     flex-direction: column;
-    border: 3px solid black;
+    background-color: #2C374D;
+    border-start-end-radius: 20px;
+    border-start-start-radius: 20px;
     width: 400px;
-    height: 200px;
+    height: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-top: 5px solid #384A6D;
 }
 
 .firstLine, .secondLine{
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 200px;
-    width: 400px;
+    justify-content: right;
+    height: 50px;
+    width: 200px;
 }
 
 .secondLine{
     margin-left: 100px;
 }
 
+.backeyboard{
+    background-color: #2C374D;
+}
+
 .keyboard{
     display: flex;
-    border: 3px solid black;
+    align-items: center;
+    justify-content: center;
+    background-color: #384A6D;
+    width: 400px;
+    padding: 50px 0px;
+    border-start-end-radius: 20px;
+    border-start-start-radius: 20px;
+    border-top: 5px solid #030F25;
+}
+
+.operator, .equal{
+    color: #8DE59A;
+}
+
+.pnt{
+    color: #FFA7B3;
 }
 
 .rightSide{
@@ -49,22 +176,68 @@ body{
 }
 
 .zero{
-    width: 200px;
+    width: 140px;
 }
 
 .equal, .aDD{
-    height: 200px;
+    height: 140px;
 }
 
 .bot{
-    border: 3px solid black;
+    background-color: #384A6D;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    border-end-end-radius: 20px;
+    border-end-start-radius: 20px;
 }
 
 .resetCalculator{
     width: 400px;
+    margin: 0;
+    padding: 0;
+    border: 3px solid #030F25;
+    background-color: #030F25;
+    border-top: 5px solid #2C374D;
+    color: #E57360;
 }
 
 button{
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: #222D44;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.deleteValue{
+    font-size: 10px;
+    color: #E57360;
+}
+
+
+.footer{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #2d3436;
+    color: #c8d6e5;
+    font-size: 20px;
+    padding: 20px;
+    margin-top: 25px;
+    border-top: 5px solid #32b5d9;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.readme{
+    text-decoration: none;
+    color: white;
+    padding: 0 5px;
 }

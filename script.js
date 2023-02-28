@@ -16,6 +16,27 @@ let operators = document.querySelectorAll('.operator');
 
 newDisplayValue.textContent = '0';
 
+
+window.addEventListener("keydown", (event) => {
+    let actions = {
+        "Enter": handleEqual,
+        "Backspace": handleDelete,
+        " ": handleReset };
+    
+    if (".0123456789".includes(event.key)) { // or event.key in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        getValue(event.key);
+    }
+    else if ("+-*/".includes(event.key)) {
+        handleOperator(event.key);
+    }
+    else if ( event.key in actions ){
+        actions[event.key]();
+    }else return
+    // Cancel the default action to avoid it being handled twice
+    event.preventDefault();
+}, true);
+
+
 numBtn.forEach((btn) => {
     btn.addEventListener("click", (val) =>{
         getValue(val.target.textContent);
@@ -34,6 +55,14 @@ resetCalculator.addEventListener("click", handleReset);
 
 deleteValue.addEventListener("click", handleDelete);
 
+function checkPoint(){
+    if(oldValue.slice(-1).toString() === '.')
+        oldValue = oldValue.slice(0, -1);
+    else if(newValue.slice(-1).toString() === '.')
+        newValue = newValue.slice(0, -1);
+}
+
+
 function handleDelete(){
     if(newValue.length > 0){
         newValue = newValue.slice(0, -1);
@@ -46,13 +75,18 @@ function getValue(input){
         if(newValue.includes('.') && input === '.')
             return;
         else{
-            newValue += input;
+            if(newValue === '' && input === '.')
+                newValue = '0.'
+            else{
+                newValue += input;
+            }
             newDisplayValue.textContent = newValue;
         }
     }
 }
 
 function handleOperator(op){
+    checkPoint();
     if(oldValue !== '' && newValue !== ''){
         errorLine = oldValue + "  " + operator + "  " + newValue + " =";
         calculate();
@@ -73,6 +107,7 @@ function handleOperator(op){
 }
 
 function handleEqual(){
+    checkPoint();
     if(oldValue !== '' && newValue !== ''){
         oldDisplayValue.textContent = oldValue + "  " + operator + "  " + newValue + " =";
         errorLine = oldValue + "  " + operator + "  " + newValue + " =";
@@ -107,7 +142,7 @@ function calculate(){
     else if(operator === '/'){
         answer = divide(oldValue, newValue);
     }
-    oldValue = answer;
+    oldValue = answer.toString();
     newValue = '';
 }
 
