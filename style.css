@@ -1,7 +1,9 @@
 body{
     margin: 0;
     padding: 0;
+    position: relative;
 }
+
 
 :root {
     --primary-color: #32b5d9;
@@ -42,6 +44,10 @@ body{
     border-top: 5px solid #030F25;
 }
 
+element.style{
+    background-image: url(https://lamnaouarrr.github.io/Calculator/Images/pexels-mudassir-ali-2680270.jpg);
+}
+
 .blueBack{
     position: absolute;
     right: 0;
@@ -52,7 +58,7 @@ body{
     filter: brightness(40%);
 }
 
-.atitle{
+.aTitle{
     font-size: 50px;
     font-family: 'Helvetica', sans-serif;
     display: flex;
@@ -70,6 +76,7 @@ ul{
     margin: 5px;
     padding: 5px;
     gap: 800px;
+    margin-top: 0;
 }
 
 li{
